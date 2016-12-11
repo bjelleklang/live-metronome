@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:orientation="horizontal">
+            <Button
+                android:text="@string/tap"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="136dp"
+                android:id="@+id/btn_tap"
+                 />
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:text="@string/bpm"
+                    android:ems="10"
+                    android:id="@+id/txt_bpm"
+                    android:inputType="numberSigned"
+                    android:singleLine="true" />
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberSigned"
+                        android:text="Beat"
+                        android:ems="10"
+                        android:id="@+id/txt_beat"
+                        android:singleLine="true" />
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberSigned"
+                        android:text="Bar"
+                        android:ems="10"
+                        android:id="@+id/txt_bar"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:text="@string/start"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="136dp"
+                android:id="@+id/btn_met_toggle"
+                 />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+</LinearLayout>
