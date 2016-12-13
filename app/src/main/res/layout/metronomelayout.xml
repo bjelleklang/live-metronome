@@ -34,11 +34,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <Spinner
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
-                    android:text="@string/bpm"
+                    android:text="@string/defaultbpm"
                     android:ems="10"
                     android:id="@+id/txt_bpm"
                     android:inputType="numberSigned" />
@@ -91,7 +91,8 @@
                 android:id="@+id/temposlider"
                 android:layout_weight="1"
                 android:progress="120"
-                android:max="300" />
+                android:max="300"
+                />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
