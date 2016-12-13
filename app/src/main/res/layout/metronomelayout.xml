@@ -12,6 +12,7 @@
         android:layout_weight="0.5"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -33,15 +34,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <EditText
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:text="@string/bpm"
                     android:ems="10"
                     android:id="@+id/txt_bpm"
-                    android:inputType="numberSigned"
-                    android:singleLine="true" />
+                    android:inputType="numberSigned" />
                 <LinearLayout
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
@@ -50,24 +50,22 @@
                     android:layout_width="match_parent"
                     android:orientation="horizontal">
 
-                    <EditText
+                    <Spinner
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:inputType="numberSigned"
                         android:text="Beat"
                         android:ems="10"
-                        android:id="@+id/txt_beat"
-                        android:singleLine="true" />
-                    <EditText
+                        android:id="@+id/txt_beat" />
+                    <Spinner
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:inputType="numberSigned"
                         android:text="Bar"
                         android:ems="10"
-                        android:id="@+id/txt_bar"
-                        android:singleLine="true" />
+                        android:id="@+id/txt_bar" />
                 </LinearLayout>
             </LinearLayout>
             <Button
@@ -78,7 +76,23 @@
                 android:id="@+id/btn_met_toggle"
                  />
         </LinearLayout>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
 
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/temposlider"
+                android:layout_weight="1"
+                android:progress="120"
+                android:max="300" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
