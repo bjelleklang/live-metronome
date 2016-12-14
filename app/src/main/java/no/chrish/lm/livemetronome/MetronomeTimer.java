@@ -11,24 +11,29 @@ import java.lang.*;
 public class MetronomeTimer {
     int DEFAULT_SIZE = 3;
 
-    ArrayBlockingQueue<Long> queue;
+    // First idx in queue is newest
+    long[] queue;
 
+    /** Initing the queue, setting all elements to 0 */
     public MetronomeTimer(){
-        queue = new ArrayBlockingQueue(DEFAULT_SIZE);
-        long nada = 0;
+        queue = new long[DEFAULT_SIZE];
 
-        for (int i=0; i<queue.size(); i++){
-            queue.add(nada);
+        for (int i=0; i<queue.length; i++){
+            queue[i] = 0;
         }
     }
 
     public void Tap(){
-        queue.add(System.currentTimeMillis());
+        // Move existing values, discarding the oldest one
+        for(int i=queue.length-2; i>=0; i--){
+            queue[i+1] = queue[i];
+        }
+
+        queue[0] = System.currentTimeMillis();
     }
 
-    public Long[] GetQueueArray(){
-        Long[] l = new Long[queue.size()];
-        return queue.toArray(l);
+    public long[] GetQueueArray(){
+        return queue;
     }
 
     /**
@@ -40,13 +45,25 @@ public class MetronomeTimer {
      * */
     public long GetBpm(){
         long sumOfSampleDiffs = 0;
-        int numSamples = 2;
+        long prevSample = 0;
 
-        Long[] l = GetQueueArray();
-        sumOfSampleDiffs += l[1]-l[0];
-        sumOfSampleDiffs += l[2]-l[1];
+        // Number of samples are total minus one. First sample does not produce a diff, it's just a starting point used to calculate diffs.
+        int numSamples = 0;
 
-        long bpm = 60000/(sumOfSampleDiffs /numSamples);
+        // Get avg between taps. Ignore if taps happen with >3 sec intervals
+        for (int i=queue.length-2; i>-1; i--){ // -2 to get the second-to-last index
+            long qDiff = queue[i]-queue[i+1];
+            if (qDiff < 3001) {
+                sumOfSampleDiffs += qDiff;
+                numSamples++;
+            }
+        }
+
+        long bpm = 0;
+        if (sumOfSampleDiffs > 0){
+            bpm = 60000/(sumOfSampleDiffs /numSamples);
+        }
+
         return bpm;
     }
 }

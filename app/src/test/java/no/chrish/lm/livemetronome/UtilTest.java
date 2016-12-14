@@ -25,7 +25,7 @@ public class UtilTest {
         mt.Tap();
 
         // Diff should be fairly set:
-        Long[] data = mt.GetQueueArray();
+        long[] data = mt.GetQueueArray();
 
         long result = mt.GetBpm();
 
