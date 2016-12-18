@@ -5,5 +5,7 @@
     <string name="stop">Stop</string>
     <string name="bpm">BPM</string>
     <string name="defaultbpm">120</string>
+
+    <string name="patternHeader">Pattern played. Upper button is high note, customize as needed. </string>
 </resources>
 

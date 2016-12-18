@@ -57,6 +57,7 @@
                         android:inputType="numberSigned"
                         android:text="Beat"
                         android:ems="10"
+                        android:entries="@array/bpmValues"
                         android:id="@+id/txt_beat" />
                     <Spinner
                         android:layout_width="0dp"
@@ -64,6 +65,7 @@
                         android:layout_height="match_parent"
                         android:inputType="numberSigned"
                         android:text="Bar"
+                        android:entries="@array/barValues"
                         android:ems="10"
                         android:id="@+id/txt_bar" />
                 </LinearLayout>
@@ -94,6 +96,30 @@
                 android:max="300"
                 />
         </LinearLayout>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_weight="1"
+                android:text="@string/patternHeader" />
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/patternLout">
+        </LinearLayout>
+    </LinearLayout>
     </LinearLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
